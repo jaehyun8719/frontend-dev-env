@@ -11,4 +11,4 @@ dist
 .idea/sonarlint/
 .idea/vcs.xml
 frontend-dev-env.iml
-package.json
+
