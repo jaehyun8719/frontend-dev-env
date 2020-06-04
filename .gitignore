@@ -1,0 +1,14 @@
+node_modules
+.sass-cache
+dist
+.idea/$CACHE_FILE$
+.idea/.gitignore
+.idea/dictionaries
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/sonarlint/
+.idea/vcs.xml
+frontend-dev-env.iml
+package.json
