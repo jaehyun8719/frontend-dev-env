@@ -1,7 +1,7 @@
 const path = require("path");
 const customPlugin = require("./src/customPlugin.js");
 const webpack = require("webpack");
-const childProcess = require('child_process');
+const childProcess = require("child_process");
 
 module.exports = {
     mode: "development",
@@ -34,9 +34,15 @@ module.exports = {
         new customPlugin(),
         new webpack.BannerPlugin({
             banner: () =>
-                `commitVersion: ${childProcess.execSync('git rev-parse --short HEAD')}` +
+                `commitVersion: ${childProcess.execSync("git rev-parse --short HEAD")}` +
                 `Build Date: ${new Date().toLocaleString()}\n` +
-                `Author: ${childProcess.execSync('git config user.name')}`
+                `Author: ${childProcess.execSync("git config user.name")}`
+        }),
+        new webpack.DefinePlugin({
+            VERSION: JSON.stringify("v.1.2.3"),
+            PRODUCTION : process.env.NODE_ENV === "production" ? JSON.stringify(true) : JSON.stringify(false),
+            MAX_COUNT: JSON.stringify(999),
+            "api.domain": process.env.NODE_ENV === "production" ? JSON.stringify("http://prod.api.domain.com") : JSON.stringify("http://dev.api.domain.com"),
         })
     ]
 }
