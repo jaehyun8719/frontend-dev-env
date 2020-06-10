@@ -1,5 +1,5 @@
 import "./style.css"
-import small from './small.png';
+import small from '../dist/small.png';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML = `

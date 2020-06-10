@@ -1,7 +1,9 @@
 const path = require("path");
-const customPlugin = require("./src/customPlugin.js");
+const CustomPlugin = require("./src/customPlugin.js");
 const webpack = require("webpack");
 const childProcess = require("child_process");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -31,7 +33,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new customPlugin(),
+        new CustomPlugin(),
         new webpack.BannerPlugin({
             banner: () =>
                 `commitVersion: ${childProcess.execSync("git rev-parse --short HEAD")}` +
@@ -43,6 +45,18 @@ module.exports = {
             PRODUCTION : process.env.NODE_ENV === "production" ? JSON.stringify(true) : JSON.stringify(false),
             MAX_COUNT: JSON.stringify(999),
             "api.domain": process.env.NODE_ENV === "production" ? JSON.stringify("http://prod.api.domain.com") : JSON.stringify("http://dev.api.domain.com"),
-        })
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html", // 템플릿 경로를 지정
+            templateParameters: { // 템플릿에 주입할 파라매터 변수 지정
+                env: process.env.NODE_ENV === "development" ? "(개발용)" : ""
+            },
+            minify: process.env.NODE_ENV === "production" ? {
+                collapseWhitespace: true, // 빈칸 제거
+                removeComments: true, // 주석 제거
+            } : false,
+            hash: true, // 정적 파일을 불러올때 쿼리문자열에 웹팩 해쉬값을 추가한다
+        }),
+        new CleanWebpackPlugin(),
     ]
 }
