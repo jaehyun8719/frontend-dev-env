@@ -18,12 +18,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(scss|css)$/,
                 use: [
                     process.env.NODE_ENV === "production"
                         ? MiniCssExtractPlugin.loader // 운영 환경
                         : "style-loader", // 개발 환경
-                        "css-loader"
+                        "css-loader",
+                        "sass-loader"
                 ]
             },
             {

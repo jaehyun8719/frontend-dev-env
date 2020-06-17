@@ -1,11 +1,11 @@
-import "./style.css"
-import small from '../src/small.png';
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.innerHTML = `
-        <img src="${small}" />
-    `
-})
+import "./style.scss"
+// import small from '../src/small.png';
+//
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.body.innerHTML = `
+//         <img src="${small}" />
+//     `
+// })
 
 // console.log(VERSION) // 'v.1.2.3'
 // console.log(PRODUCTION) // true
