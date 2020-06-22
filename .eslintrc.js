@@ -8,6 +8,8 @@ module.exports = {
         "ecmaVersion": 11,
         "sourceType": "module"
     },
+    "plugins": ["prettier"],
     "rules": {
+        "prettier/prettier": "error"
     }
 };
