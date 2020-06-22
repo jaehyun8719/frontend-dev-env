@@ -1,5 +1,3 @@
 // ESLint
-let name = "";
-console.log();
-
-name = "jaehyun";
+let name = "jaehyun";
+console.log(name);
