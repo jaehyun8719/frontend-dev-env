@@ -8,6 +8,8 @@
 - `3-lint/1-eslint`: 웹팩 ESLint
 - `3-lint/2-prettier`: 웹팩 prettier
 - `3-lint/3-husky & lint-staged`: 웹팩 husky & lint-staged
+- `4-webpack/1-dev-server`: 웹팩 dev-server
+
 
 
 
