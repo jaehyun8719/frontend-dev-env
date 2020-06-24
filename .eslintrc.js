@@ -1,15 +1,16 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2020": true
+    env: {
+        browser: true,
+        es2020: true,
+        node: true,
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 11,
-        "sourceType": "module"
+    extends: "eslint:recommended",
+    parserOptions: {
+        ecmaVersion: 11,
+        sourceType: "module",
     },
-    "plugins": ["prettier"],
-    "rules": {
-        "prettier/prettier": "error"
-    }
+    plugins: ["prettier"],
+    rules: {
+        "prettier/prettier": "error",
+    },
 };
