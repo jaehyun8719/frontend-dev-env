@@ -12,3 +12,5 @@ dist
 .idea/vcs.xml
 frontend-dev-env.iml
 
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
