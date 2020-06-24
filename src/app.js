@@ -1,3 +1,4 @@
-// ESLint
-let name = "jaehyun";
+import "./style.scss";
+
+const name = "jaehyun";
 console.log(name);
