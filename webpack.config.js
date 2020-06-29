@@ -17,6 +17,7 @@ module.exports = {
     devServer: {
         overlay: true,
         stats: "errors-only",
+        hot: true,
     },
     module: {
         rules: [
