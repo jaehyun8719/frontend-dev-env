@@ -13,6 +13,7 @@ module.exports = {
     mode,
     entry: {
         main: "./src/app.js",
+        result: "./src/result.js",
     },
     output: {
         filename: "[name].js",
@@ -37,6 +38,9 @@ module.exports = {
                       }),
                   ]
                 : [],
+        splitChunks: {
+            chunks: "all",
+        },
     },
     module: {
         rules: [
