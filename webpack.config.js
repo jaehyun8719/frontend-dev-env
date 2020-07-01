@@ -4,6 +4,8 @@ const childProcess = require("child_process");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const mode = process.env.NODE_ENV || "development";
 
@@ -20,6 +22,21 @@ module.exports = {
         overlay: true,
         stats: "errors-only",
         hot: true,
+    },
+    optimization: {
+        minimizer:
+            mode === "production"
+                ? [
+                      new OptimizeCSSAssetsPlugin(),
+                      new TerserPlugin({
+                          terserOptions: {
+                              compress: {
+                                  drop_console: true, // 콘솔 로그를 제거한다
+                              },
+                          },
+                      }),
+                  ]
+                : [],
     },
     module: {
         rules: [
