@@ -9,6 +9,9 @@
 - `3-lint/2-prettier`: 웹팩 prettier
 - `3-lint/3-husky & lint-staged`: 웹팩 husky & lint-staged
 - `4-webpack/1-dev-server`: 웹팩 dev-server
+- `4-webpack/2-hot`: 웹팩 핫 로딩
+- `4-webpack/3-production_mode`: 웹팩 Mode
+- `4-webpack/4-optimazation`: 웹팩 최적화
 
 
 
