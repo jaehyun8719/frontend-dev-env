@@ -1,9 +1,9 @@
 export default {
-    hide() {
-        console.log("hide");
-    },
+  hide() {
+    console.log("hide");
+  },
 
-    show() {
-        console.log("show");
-    },
+  show() {
+    console.log("show");
+  },
 };
